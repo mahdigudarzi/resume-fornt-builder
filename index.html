@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+
+
+    <form  id="myForm">
+        <label for="name">نام و نام خانوادگی:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+
+        <label for="email">ایمیل:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="cellphone">شماره همراه:</label>
+        <input type="tel" id="cellphone" name="cellphone" required>
+        <br>
+        <label for="location">محل زندگی:</label>
+        <input type="text" id="location" name="location" required>
+        <br>
+        <label for="age">سن (درصورت تمایل):</label>
+        <input type="number" id="age" name="age">
+        <br>
+        <label for="degree">مدرک تحصیلی</label>
+        <select id="degree" name="degree">
+            <option value="دیپلم">دیپلم</option>
+            <option value="کارشناسی">کارشناسی</option>
+            <option value="کارشناسی ارشد">کارشناسی ارشد</option>
+            <option value="دکترا">دکترا</option>
+        </select>
+        <label for="hobbies">وضعیت سربازی</label>
+        <select id="hobbies" name="hobbies" >
+            <option value="معاف تحصیلی">معاف تحصیلی</option>
+            <option value="معافی دائم">معافی دائم</option>
+            <option value="اتمام خدمت">اتمام خدمت</option>
+        </select>
+        <label for="aboutMe">درباره من :</label>
+        <textarea id="aboutMe" name="aboutMe"></textarea>
+        <br>
+        <label for="skills">مهارت ها:</label><br>
+        <input type="text" id="skills" name="skills">
+        <br>
+        <label for="linkedin">صفحه linkedin شما:</label>
+        <input type="text" id="linkedin" name="linkedin">
+        <br>
+        <label for="stackoverflow">صفحه stackoverflow شما:</label>
+        <input type="text" id="stackoverflow" name="stackoverflow">
+        <br>
+        <label for="github">صفحه github شما:</label>
+        <input type="text" id="github" name="github">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+</html>
