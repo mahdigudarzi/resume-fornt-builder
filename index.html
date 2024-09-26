@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Resume builder !</title>
     <link rel="stylesheet" href="./assets/css/index.css">
+<!--    <script type="module" src="assets/js/utils/Projects.js"></script>-->
+    <script type="module" src="assets/js/indexpage/app.js"></script>
+
 </head>
+
 <body>
-
-
-    <form  id="myForm">
+    <div id="myForm" autocomplete="off">
         <label for="name">نام و نام خانوادگی:</label>
         <input type="text" id="name" name="name" required>
         <br>
-
         <label for="email">ایمیل:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            style="direction: ltr">
         <br>
         <label for="cellphone">شماره همراه:</label>
-        <input type="tel" id="cellphone" name="cellphone" required>
+        <input type="tel" id="cellphone" name="cellphone" required pattern="(\+98|0)?9[0-9]{9}">
         <br>
         <label for="location">محل زندگی:</label>
         <input type="text" id="location" name="location" required>
         <br>
         <label for="age">سن (درصورت تمایل):</label>
-        <input type="number" id="age" name="age">
+        <input type="number" id="age" name="age" min="0">
         <br>
         <label for="degree">مدرک تحصیلی</label>
         <select id="degree" name="degree">
             <option value="دیپلم">دیپلم</option>
+            <option value="دانشجو">دانشجو</option>
             <option value="کارشناسی">کارشناسی</option>
             <option value="کارشناسی ارشد">کارشناسی ارشد</option>
             <option value="دکترا">دکترا</option>
         </select>
-        <label for="hobbies">وضعیت سربازی</label>
-        <select id="hobbies" name="hobbies" >
+        <label for="military-status">وضعیت سربازی</label>
+        <select id="military-status" name="military-status">
             <option value="معاف تحصیلی">معاف تحصیلی</option>
             <option value="معافی دائم">معافی دائم</option>
             <option value="اتمام خدمت">اتمام خدمت</option>
@@ -41,20 +45,44 @@
         <label for="aboutMe">درباره من :</label>
         <textarea id="aboutMe" name="aboutMe"></textarea>
         <br>
+        <!-- takes a log string devide by - (dash) -->
         <label for="skills">مهارت ها:</label><br>
-        <input type="text" id="skills" name="skills">
+        <input type="text" id="skills" name="skills"
+            placeholder="مهارت‌ها را با خط تیره وارد کنید، مانند: مهارت یک - مهارت دو">
         <br>
-        <label for="linkedin">صفحه linkedin شما:</label>
-        <input type="text" id="linkedin" name="linkedin">
+        <!--        project's-->
+        <div class="skills-section">
+            <h2>پروژها</h2>
+            <div id="skills-wrapper">
+                <div class="skill-form">
+                    <label>توضیحات</label>
+                    <input type="text" name="description[]" placeholder="توضیحات مهارت">
+                    <label>لینک</label>
+                    <input type="url" name="link[]" placeholder="لینک">
+                </div>
+            </div>
+            <button id="add-project-btn">اضافه کردن پروژه جدید</button>
+            <button id="delete-project-btn">پاک کردن پروژه جدید</button>
+        </div>
+        <label for="github">صفحه GitHub شما <span class="optional"></span>:</label>
+        <input type="text" id="github" name="github" required placeholder="https://github.com/your-username"
+            style="direction: ltr">
         <br>
-        <label for="stackoverflow">صفحه stackoverflow شما:</label>
-        <input type="text" id="stackoverflow" name="stackoverflow">
+        <label for="linkedin">صفحه LinkedIn شما <span class="optional">(اختیاری)</span>:</label>
+        <input type="text" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/your-username"
+            style="direction: ltr">
         <br>
-        <label for="github">صفحه github شما:</label>
-        <input type="text" id="github" name="github">
+        <label for="stackoverflow">صفحه StackOverflow شما <span class="optional">(اختیاری)</span>:</label>
+        <input type="text" id="stackoverflow" name="stackoverflow"
+            placeholder="https://stackoverflow.com/users/your-id/your-username" style="direction: ltr">
         <br>
-        <input type="submit" value="Submit">
-    </form>
-    <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+        <button id="submit" type="button" value="ساخت رزومه">ساخت روزمه</button>
+
+    </div>
+    </div>
+
 </body>
+
 </html>

@@ -1,0 +1,128 @@
+/* Reset styles to avoid browser inconsistencies */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global body styling */
+body {
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Form container styling */
+#myForm, .skills-section {
+    max-width: 100%;
+    width: 100%; /* Make it flexible for responsiveness */
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #fff;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Uniform width for all input fields */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+    width: 100%; /* Make all input elements stretch fully */
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Focus state for inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+    background-color: #eef5ff;
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button styling */
+#submit,
+#add-project-btn,#delete-project-btn,
+#add-skill-btn , #delete-skill-btn{
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+input[type="submit"]:hover,
+#add-skill-btn:hover {
+    background-color: #45a049;
+}
+
+/* Error message */
+.error {
+    color: red;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Optional field notice */
+.optional {
+    color: gray;
+    font-size: 0.9rem;
+}
+
+/* Skill form section */
+.skills-section .skill-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.skills-section input[type="text"],
+.skills-section input[type="url"] {
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.4rem;
+    width: 100%; /* Ensure full width for all input fields */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    #myForm, .skills-section {
+        padding: 1rem;
+        margin: 0;
+    }
+
+    input[type="submit"],
+    #add-skill-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}

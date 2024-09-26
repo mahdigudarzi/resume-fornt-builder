@@ -1,0 +1,337 @@
+/* imports */
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../../fonts/Yekan.eot"); /* IE9 Compat Modes */
+  src: url("../../fonts/Yekan.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../../fonts/Yekan.woff2") format("woff2"),
+    /* Modern Browsers */ url("../../fonts/Yekan.woff") format("woff"),
+    /* Modern Browsers */ url("../../fonts/Yekan.otf") format("opentype"),
+    /* Open Type Font */ url("../../fonts/Yekan.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  font-display: auto;
+}
+
+/* imports ends */
+
+/* CSS Reset starts  */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* css reset ends  */
+
+/* variables */
+
+:root {
+  --header-color: #536a7e;
+  --icons: #e7cd8f;
+  --links: #4187d5;
+  --border-color: #cccccc;
+}
+/* variables ends  */
+
+/* globals */
+
+body {
+  background-color: whitesmoke;
+  font-size: 16px;
+  font-family: "Yekan", Fallback, sans-serif;
+  margin: 2rem auto;
+  width: 90vw;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  color: var(--links);
+  text-decoration: none;
+}
+.theSvg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--icons);
+}
+/* globals Ends */
+
+/* layout */
+
+.container {
+  display: flex;
+  min-width: 90vw;
+  /* min-height: 95vh; */
+  gap: 2rem;
+  margin: 0 auto;
+}
+.rightSide {
+  flex: 3;
+  /*flex-grow: 2;*/
+  margin-top: 1.2rem;
+}
+
+.rightSideContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSideContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* layout Ends  */
+
+/* .rightSide */
+.name {
+  font-weight: bold;
+  margin: 0.5em 1em;
+  color: var(--header-color);
+}
+
+.rightSideContainer .headerSection {
+  font-weight: bold;
+  margin: 0.5em 1.3em;
+  margin-left: 1.3em;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--header-color);
+}
+.rightSideContainer .descriptionSection {
+  font-size: 1em;
+  margin: 0.5em 1.9em;
+}
+
+.rightSideContainer .descriptionSection ul {
+  list-style: none;
+}
+
+/* .rightSide Ends */
+
+/* .leftSide */
+.leftSide {
+  flex: 1;
+  /*flex-grow: 1;*/
+  margin-top: 1rem;
+}
+
+.contentInfo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: 1rem auto;
+  width: 100%;
+  font-size: 1rem;
+  gap: 1rem;
+}
+.email,
+.mobile,
+.address {
+  /* font-size: 1.1rem; */
+
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.3rem;
+}
+.email a,
+.mobile a {
+  flex-grow: 2;
+}
+
+.email img,
+.mobile img,
+.address img {
+  flex-grow: 1;
+}
+
+.personal {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 100%;
+  gap: 1rem;
+}
+.personal-header {
+  font-weight: bold;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--header-color);
+  align-self: center;
+}
+
+.items {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr;
+}
+
+.items .itemsValue {
+  justify-self: flex-end;
+}
+.items .itemsDescription {
+  justify-self: flex-start;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 98%;
+  height: 98%;
+  gap: 1rem;
+}
+.socialMediaDescription {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.github,
+.linkedin,
+.stackOverFlow {
+  width: 2rem;
+  height: 2rem;
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em 3em;
+  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
+  background-color: whitesmoke;
+  border-radius: 0.5em;
+  margin: 1em auto; /* به‌صورت خودکار وسط قرار می‌گیرد */
+  width: 96.67%;
+}
+
+/* Resume section container */
+.resume-section {
+  margin-bottom: 1rem;
+}
+
+/* Header styling for descriptions */
+.resume-section h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Horizontal line styling */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+/* Link section */
+.linkSection {
+  margin-top: 0.5rem;
+}
+
+/* Styling for links */
+.linkSection a {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  word-wrap: break-word; /* Ensures long URLs break correctly */
+}
+.linkSection a{
+  color: #536a7e;
+
+}
+.linkSection  a:hover, a:focus, a:active {
+  color: var(--links);
+  text-decoration: none;
+
+}
+
+
+
+/* leftSide Ends */
+
+
+@media print {
+  .no-print {
+    display: none !important; /* Hide elements with this class */
+  }
+
+  /* Ensure the page is printed in landscape mode */
+  @page {
+    size: landscape; /* Set the page size to landscape */
+  }
+}
